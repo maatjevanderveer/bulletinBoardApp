@@ -1,2 +1,31 @@
 //- FIRST PAGE: SHOWS A FORM WHERE PEOPLE CAN ADD A NEW MESSAGE -//
 
+html
+	head
+		title post message
+	body
+
+		//- NAV BAR
+		nav
+			a BULLETIN BOARD APPLICATION
+			ul
+				li 
+					a(href='/newmessage') POST MESSAGE
+				li
+					a(href='/messageboard') MESSAGEBOARD
+
+		//- FORM
+		h1 Write message
+
+		form(action='/newmessage' method='post')
+			p
+				label(for='title') Title:
+				input(type='text', placeholder='type your title here...', name='newTitle')
+			p
+				label(for='body') Body:
+				input(type='text', placeholder='type your message here...', name='newBody')
+			button(type='submit') Post message now
+
+		//- IMPORT JS AND MATERIALIZE.JS
+		script(type='text/javascript', src='https://code.jquery.com/jquery-2.1.1.min.js')
+		script(type='text/javascript', src='js/materialize.min.js')

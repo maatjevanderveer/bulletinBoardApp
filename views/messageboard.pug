@@ -1,0 +1,26 @@
+//- SECOND PAGE: SHOWS EACH OF THE MESSAGES PEOPLE HAVE POSTED -//
+html
+	head
+		title post message
+	body
+
+		//- NAV BAR
+		nav
+			a BULLETIN BOARD APPLICATION
+			ul
+				li 
+					a(href='/newmessage') POST MESSAGE
+				li
+					a(href='/messageboard') MESSAGEBOARD
+
+		//- MESSAGE BOARD
+		h1 Results
+	
+		p Title: 
+		//- #{foundUser.firstname} #{foundUser.lastname}
+		p Body: 
+		//- #{foundUser.email}
+
+		//- IMPORT JS AND MATERIALIZE.JS
+		script(type='text/javascript', src='https://code.jquery.com/jquery-2.1.1.min.js')
+		script(type='text/javascript', src='js/materialize.min.js')
