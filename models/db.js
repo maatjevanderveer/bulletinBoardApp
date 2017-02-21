@@ -28,6 +28,8 @@ db.sync({
 		body: "this is the body"
 	}
 	Messages.create(oneMessage)
+	Messages.create(oneMessage)
+	Messages.create(oneMessage)
 })
 .catch( (error) => console.log(error) );
 

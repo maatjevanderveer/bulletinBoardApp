@@ -9,9 +9,14 @@ app.get('/ping', function (request, response) {
 app.get('/getmessage', function(request, response) {
 	db.Messages.findAll()
 	.then((allMessages) => {
+		const allTitles = []
 		console.log('this logs all messages')
 		console.log(allMessages)
-		response.send(allMessages)
+		
+		for (var i = 0; i < allMessages.length; i++) {
+			allTitles.push(allMessages[i].title)
+		}
+		response.send(allTitles)
 	})
 })
 
