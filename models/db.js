@@ -7,7 +7,26 @@ const db = new Sequelize('bulletinboard', process.env.POSTGRES_USER, process.env
 }); // ('database', 'username', 'password')
 
 // DEFINE MODEL 
-var Messages = sequelize.define('messages', {
+const Messages = db.define('messages', {
 	title: Sequelize.STRING,
 	body: Sequelize.STRING
 });
+
+// CREATE TABLE
+db.sync({
+	force: true				// will drop tables before recreating them
+})
+.then(function(someParameter) {
+	const oneMessage = {
+		title: "this is the title",
+		body: "this is the body"
+	}
+	Messages.create(oneMessage)
+})
+.catch( (error), => console.log(error) );
+
+// EXPORT MODEL (IN THIS CASE TO APP.JS)
+module.exports = {
+	db: db,
+	Messages: Messages
+}
