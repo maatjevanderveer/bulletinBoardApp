@@ -8,8 +8,14 @@ const db = new Sequelize('bulletinboard', process.env.POSTGRES_USER, process.env
 
 // DEFINE MODEL 
 const Messages = db.define('messages', {
-	title: Sequelize.STRING,
-	body: Sequelize.STRING
+	title: {
+		type: Sequelize.STRING,
+		allowNull: false,
+	},
+	body: {
+		type:Sequelize.STRING,
+		allowNull: false,
+	}
 });
 
 // CREATE TABLE
@@ -23,7 +29,7 @@ db.sync({
 	}
 	Messages.create(oneMessage)
 })
-.catch( (error), => console.log(error) );
+.catch( (error) => console.log(error) );
 
 // EXPORT MODEL (IN THIS CASE TO APP.JS)
 module.exports = {
