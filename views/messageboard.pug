@@ -1,6 +1,9 @@
 //- SECOND PAGE: SHOWS EACH OF THE MESSAGES PEOPLE HAVE POSTED -//
 html
 	head
+		link(href='http://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+		link(type='text/css', rel='stylesheet', href='css/materialize.min.css', media='screen,projection')
+
 		title post message
 	body
 
@@ -9,12 +12,12 @@ html
 			a BULLETIN BOARD APPLICATION
 			ul
 				li 
-					a(href='/newmessage') POST MESSAGE
+					a(href='/') WRITE MESSAGE
 				li
 					a(href='/messageboard') MESSAGEBOARD
 
 		//- MESSAGE BOARD
-		h1 Results
+		h1 Messageboard
 
 		each key in allMessages
 			p Title: #{key.title}
@@ -22,5 +25,7 @@ html
 
 		//- IMPORT JS
 		script(src='js/jquery-3.1.1.js')
+		script(type='text/javascript', src='js/materialize.min.js')
+
 			script.
 				console.log(messageboard)
