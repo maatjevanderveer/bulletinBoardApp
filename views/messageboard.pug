@@ -15,12 +15,12 @@ html
 
 		//- MESSAGE BOARD
 		h1 Results
-	
-		p Title: 
-		//- #{foundUser.firstname} #{foundUser.lastname}
-		p Body: 
-		//- #{foundUser.email}
 
-		//- IMPORT JS AND MATERIALIZE.JS
-		script(type='text/javascript', src='https://code.jquery.com/jquery-2.1.1.min.js')
-		script(type='text/javascript', src='js/materialize.min.js')
+		each key in allMessages
+			p Title: #{key.title}
+			p Body: #{key.body}
+
+		//- IMPORT JS
+		script(src='js/jquery-3.1.1.js')
+			script.
+				console.log(messageboard)

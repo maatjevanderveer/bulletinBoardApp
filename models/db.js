@@ -27,9 +27,16 @@ db.sync({
 		title: "this is the title",
 		body: "this is the body"
 	}
+	const anotherMessage = {
+		title: "this is the second title",
+		body: "this is the second body"
+	}
 	Messages.create(oneMessage)
-	Messages.create(oneMessage)
-	Messages.create(oneMessage)
+	Messages.create(anotherMessage)
+	Messages.create( {
+		title: request.body.newTitle,
+		body: request.body.newBody
+	})
 })
 .catch( (error) => console.log(error) );
 
