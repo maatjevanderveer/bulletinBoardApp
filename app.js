@@ -18,8 +18,21 @@ app.get('/ping', function (request, response) {
 	response.send('pong')
 });
 
-app.get('/newmessage', function (request, response) {
+app.get('/', function (request, response) {
 	response.render('index')
+})
+
+app.post('/newmessage', function(request, response) {
+	
+	db.Messages.create({
+		title: request.body.newTitle,
+		body: request.body.newBody
+	}).then( (newMessage) =>{
+		console.log(newMessage)
+		response.redirect('/messageboard')
+	})
+	// connect to database
+	// 
 })
 
 app.get('/messageboard', function(request, response) {

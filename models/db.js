@@ -33,10 +33,6 @@ db.sync({
 	}
 	Messages.create(oneMessage)
 	Messages.create(anotherMessage)
-	Messages.create( {
-		title: request.body.newTitle,
-		body: request.body.newBody
-	})
 })
 .catch( (error) => console.log(error) );
 
