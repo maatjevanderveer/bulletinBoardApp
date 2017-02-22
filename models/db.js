@@ -24,12 +24,12 @@ db.sync({
 })
 .then(function(someParameter) {
 	const oneMessage = {
-		title: "this is the title",
-		body: "this is the body"
+		title: "Cat Ipsum",
+		body: "Cat not kitten around eat owner's food or poop on grasses so present belly, scratch hand when stroked. Where is my slave?"
 	}
 	const anotherMessage = {
-		title: "this is the second title",
-		body: "this is the second body"
+		title: "Another Cat Ipsum",
+		body: "I'm getting hungry. Destroy couch chirp at birds so lick the curtain just to be annoying and howl on top of tall thing yet immediately regret falling into bathtub yet cough furball sit by the fire."
 	}
 	Messages.create(oneMessage)
 	Messages.create(anotherMessage)
