@@ -20,11 +20,14 @@ html
         //- FORM
         h1 Write message
 
-        form(action='/newmessage' method='post')
-            p
+        .row
+          form(action='/newmessage' method='post').col.s12
+            .row
+              .input-field.col.s6
                 label(for='title') Title:
                 input(type='text', placeholder='type your title here...', name='newTitle')
-            p
+            .row
+              .input-field.col.s6
                 label(for='body') Body:
                 input(type='text', placeholder='type your message here...', name='newBody')
                 br
