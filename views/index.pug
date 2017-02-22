@@ -4,11 +4,12 @@ html
     head
         link(href='http://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
         link(type='text/css', rel='stylesheet', href='css/materialize.min.css', media='screen,projection')
+        link(rel='stylesheet', type='text/css', href='css/styles.css')
 
         title bulletin board
     body
 
-        nav
+        nav.green.accent-2
           .nav-wrapper
             a.brand-logo Bulletin Board Application
             ul#nav-mobile.right.hide-on-med-and-down
@@ -17,21 +18,24 @@ html
               li
                 a(href='/messageboard') MESSAGEBOARD
 
-        //- FORM
-        h1 Write message
+        //- FORm
+        h3.center-align Write message
 
-        .row
-          form(action='/newmessage' method='post').col.s12
-            .row
-              .input-field.col.s6
-                label(for='title') Title:
-                input(type='text', placeholder='type your title here...', name='newTitle')
-            .row
-              .input-field.col.s6
-                label(for='body') Body:
-                input(type='text', placeholder='type your message here...', name='newBody')
-                br
-                button(type='submit') Post message now
+        .container
+          .row
+            form(action='/newmessage' method='post').col.s12
+              .row
+                .input-field.col.s6
+                  label(for='title') Title:
+                  textarea.input#inputtitle(type='text',placeholder='type your title here...',name='newTitle')
+              .row
+                .input-field.col.s6
+                  label(for='body') Body:
+                  textarea.input#input(type='text',placeholder='type your message here...',name='newBody')
+                  //- button(type='submit') Post message now
+                  
+                  button.btn.waves-effect.blue-grey.darken-1(type='submit', name='action') Post message now 
+                    i.material-icons.right send
 
         //- IMPORT JS
         script(src='js/jquery-3.1.1.js')
